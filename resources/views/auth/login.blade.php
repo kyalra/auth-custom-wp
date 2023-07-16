@@ -33,13 +33,17 @@
         <!-- Captcha -->
             <div class="mt-4">
                 <x-input-label for="captcha" :value="__('Captcha')"/>
-                <div class="flex">
+                <div class="flex captcha">
                     <x-text-input id="captcha" class="block mt-1 w-50"
                                 type="text"
                                 name="captcha"
                                 required/>
-                    <img class="block mt-1 w-50 ml-4" src="{{Captcha::src('math')}}">
+                    <img class="block mt-1 w-50 ml-4 realod-captcha" src="{{Captcha::src('math')}}">
+                    <button type="button" class="mt-1 w-50 ml-4 bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 flex text-white w-16 rounded justify-center my-auto py-1 text-3xl" class="reload" id="reload">
+                        &#x21bb;
+                    </button>
                 </div>
+                
                 <x-input-error :messages="$errors->get('captcha')" class="mt-2" />
             </div>
 
